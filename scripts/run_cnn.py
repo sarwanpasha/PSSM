@@ -13,7 +13,7 @@ from wpsskm.kernels import PROTEIN
 
 split, root = sys.argv[1], sys.argv[2]
 SITES = [38, 39, 40, 53]
-dev = os.environ.get("PSSM_DEV") or ("xpu" if (hasattr(torch, "xpu") and torch.xpu.is_available()) else "cpu")
+dev = "xpu" if (hasattr(torch, "xpu") and torch.xpu.is_available()) else "cpu"
 df = pd.read_csv(os.path.join(root, "data", "flip_gb1", "splits", split + ".csv"))
 df = df[df.target.notna()].reset_index(drop=True)
 idx2 = {a: i for i, a in enumerate(PROTEIN)}
