@@ -1,0 +1,11 @@
+data/
+emb/
+results/
+logs/
+*.pkl
+*.npy
+*.npz
+*.log
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
